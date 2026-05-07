@@ -1,0 +1,91 @@
+:root {
+  --color-navy: #0A1628;
+  --color-navy-mid: #132040;
+  --color-steel: #1E3A5F;
+  --color-azure: #1A73E8;
+  --color-azure-light: #E8F0FE;
+  --color-gold: #C9882A;
+  --color-gold-light: #FDF3E3;
+  --color-white: #FFFFFF;
+  --color-off-white: #F7F8FA;
+  --color-surface: #EEF2F7;
+  --color-text-primary: #0A1628;
+  --color-text-secondary: #4A5568;
+  --color-text-muted: #718096;
+  --color-border: #DDE3EE;
+
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  --section-padding: 96px 0;
+  --container-max: 1200px;
+  --container-padding: 0 24px;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --shadow-card: 0 4px 24px rgba(10, 22, 40, 0.08);
+  --shadow-elevated: 0 8px 40px rgba(10, 22, 40, 0.14);
+}
+
+#root {
+  min-width: 320px;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--container-padding);
+}
+
+.section-eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-azure);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--color-navy);
+  line-height: 1.15;
+}
+
+.section-subtext {
+  font-size: 17px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-top: 16px;
+}
+
+/* Reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Child reveal elements inside a revealed parent also become visible,
+   preserving their individual transition-delays for stagger effects */
+.reveal.revealed .reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }

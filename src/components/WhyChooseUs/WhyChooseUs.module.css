@@ -1,0 +1,124 @@
+.section {
+  padding: var(--section-padding);
+  background: var(--color-white);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.card:hover .hoverLine {
+  width: 100%;
+}
+
+.iconWrap {
+  width: 52px;
+  height: 52px;
+  background: var(--color-azure-light);
+  color: var(--color-azure);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.cardBody {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.hoverLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: var(--color-gold);
+  transition: width 0.35s ease;
+  border-radius: 0 0 0 var(--radius-lg);
+}
+
+/* Emphasis card */
+.emphasisCard {
+  grid-column: span 2;
+  background: var(--color-navy);
+  border-color: var(--color-navy);
+}
+
+.emphasisCard:hover {
+  transform: translateY(-4px);
+}
+
+.emphasisIcon {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-gold);
+}
+
+.emphasisTitle {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.emphasisBody {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .emphasisCard {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .emphasisCard {
+    grid-column: span 1;
+  }
+}

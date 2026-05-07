@@ -1,0 +1,170 @@
+.about {
+  padding: var(--section-padding);
+  background: var(--color-off-white);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 60fr 40fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.heading {
+  margin-bottom: 24px;
+}
+
+.body {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+}
+
+.values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.valueItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.valueIcon {
+  width: 36px;
+  height: 36px;
+  background: var(--color-azure-light);
+  color: var(--color-azure);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.valueLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.quote {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--color-text-secondary);
+  border-left: 4px solid var(--color-gold);
+  padding-left: 20px;
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+/* Right image column */
+.right {
+  position: relative;
+}
+
+.imageWrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: visible;
+}
+
+.mainImage {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  display: block;
+  box-shadow: var(--shadow-elevated);
+}
+
+.floatingCard {
+  position: absolute;
+  bottom: -24px;
+  left: -24px;
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: var(--shadow-elevated);
+  min-width: 200px;
+}
+
+.floatingIcon {
+  width: 44px;
+  height: 44px;
+  background: var(--color-azure-light);
+  color: var(--color-azure);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.floatingStat {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.floatingMeta {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.establishedBadge {
+  position: absolute;
+  top: 16px;
+  right: -12px;
+  background: var(--color-gold);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  box-shadow: 0 2px 12px rgba(201, 136, 42, 0.4);
+}
+
+@media (max-width: 1024px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .right {
+    order: -1;
+  }
+
+  .mainImage {
+    height: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .values {
+    grid-template-columns: 1fr;
+  }
+
+  .mainImage {
+    height: 260px;
+  }
+
+  .floatingCard {
+    bottom: -16px;
+    left: -8px;
+  }
+
+  .establishedBadge {
+    right: 8px;
+  }
+}

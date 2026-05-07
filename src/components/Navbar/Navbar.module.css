@@ -1,0 +1,259 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+  padding: 0;
+}
+
+.navbar.scrolled {
+  background: var(--color-white);
+  box-shadow: 0 2px 20px rgba(10, 22, 40, 0.1);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  gap: 32px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logoIcon {
+  width: 36px;
+  height: 36px;
+  background: var(--color-azure);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.navbar:not(.scrolled) .logoIcon {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logoMain {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-navy);
+  transition: color 0.3s ease;
+}
+
+.logoSub {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.navbar:not(.scrolled) .logoMain,
+.navbar:not(.scrolled) .logoSub {
+  color: white;
+}
+
+/* Nav links */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  flex: 1;
+  justify-content: center;
+}
+
+.navLink {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  transition: color 0.25s ease;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-azure);
+  transition: width 0.25s ease;
+  border-radius: 2px;
+}
+
+.navLink:hover {
+  color: var(--color-azure);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navbar:not(.scrolled) .navLink {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar:not(.scrolled) .navLink:hover {
+  color: white;
+}
+
+/* Action buttons */
+.desktopActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.btnWhatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  color: #25D366;
+  border: 1.5px solid #25D366;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.btnWhatsapp:hover {
+  background: #25D366;
+  color: white;
+}
+
+.navbar:not(.scrolled) .btnWhatsapp {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar:not(.scrolled) .btnWhatsapp:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: white;
+}
+
+.btnQuote {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--color-azure);
+  color: white;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.btnQuote:hover {
+  background: #1558c0;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(26, 115, 232, 0.35);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  color: white;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  transition: color 0.25s ease;
+}
+
+.navbar.scrolled .hamburger {
+  color: var(--color-navy);
+}
+
+/* Mobile menu extras */
+.mobileActions {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .desktopActions {
+    display: none;
+  }
+
+  .navLinks {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--color-white);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px 24px 28px;
+    gap: 0;
+    box-shadow: 0 8px 24px rgba(10, 22, 40, 0.12);
+  }
+
+  .navLinks.mobileOpen {
+    display: flex;
+  }
+
+  .navLink {
+    color: var(--color-text-secondary);
+    padding: 14px 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 15px;
+  }
+
+  .navLink::after {
+    display: none;
+  }
+
+  .navLink:hover {
+    color: var(--color-azure);
+  }
+
+  .mobileActions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .mobileActions .btnWhatsapp {
+    justify-content: center;
+    padding: 12px;
+    color: #25D366;
+    border-color: #25D366;
+  }
+
+  .mobileActions .btnQuote {
+    justify-content: center;
+    padding: 12px;
+  }
+}

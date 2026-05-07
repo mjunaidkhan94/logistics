@@ -1,0 +1,62 @@
+.strip {
+  background: var(--color-gold);
+  height: 52px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.strip::before,
+.strip::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.strip::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-gold), transparent);
+}
+
+.strip::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-gold), transparent);
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  padding: 0 8px;
+  letter-spacing: 0.3px;
+}
+
+.dot {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.strip:hover .track {
+  animation-play-state: paused;
+}

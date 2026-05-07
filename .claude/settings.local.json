@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(node -e \"const l = require\\('/Users/junaidkhan/Documents/Projects/1stLinkLogistics/node_modules/lucide-react'\\); console.log\\(Object.keys\\(l\\).filter\\(k => k.toLowerCase\\(\\).includes\\('linked'\\) || k.toLowerCase\\(\\).includes\\('instagram'\\)\\)\\)\")",
+      "Bash(node *)",
+      "Bash(curl -s http://localhost:5174)",
+      "Bash(curl -s -o /dev/null -w \"hero: %{http_code}\\\\n\" \"https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=100&q=50\")",
+      "Bash(curl -s -o /dev/null -w \"about: %{http_code}\\\\n\" \"https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=100&q=50\")",
+      "Bash(curl -s -o /dev/null -w \"service1: %{http_code}\\\\n\" \"https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=100&q=50\")",
+      "Bash(curl -s -o /dev/null -w \"service2: %{http_code}\\\\n\" \"https://images.unsplash.com/photo-1473091534298-04dcbce3278c?auto=format&fit=crop&w=100&q=50\")",
+      "Bash(curl -s -o /dev/null -w \"service3: %{http_code}\\\\n\" \"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=100&q=50\")",
+      "Bash(pkill -f \"vite --port 5174\")"
+    ]
+  }
+}
